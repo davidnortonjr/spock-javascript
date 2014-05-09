@@ -1,13 +1,22 @@
-import jdk.nashorn.api.scripting.ScriptObjectMirror
 import spock.lang.Specification
 
 import javax.script.ScriptEngine
 import javax.script.ScriptEngineManager
-import java.util.function.Consumer
 import java.util.function.Function
 
 class CallbackSpec extends Specification {
     ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn');
+
+    def "callback stub called"() {
+        setup:
+        engine.eval('''function thing(callback) { return callback('some') + 'thing'; }''')
+
+        when:
+        def result = engine.invokeFunction('thing', { return 'SOME' } as Function)
+
+        then:
+        result == 'SOMEthing'
+    }
 
     def "callback called"() {
         setup:

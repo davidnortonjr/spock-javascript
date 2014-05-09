@@ -8,13 +8,13 @@ class TransformSpec extends Specification {
     ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn');
 
     def setup() {
-        def source = this.class.getResource('/js/transforms.js').text
+        def source = this.class.getResource('/js/Transforms.js').text
         engine.eval(source);
     }
 
     def "transform"() {
         when:
-        def result = engine.invokeFunction('transform')
+        Map result = engine.invokeFunction('transform', [name: [first: 'James', last: 'Bond']])
 
         then:
         result.firstName == 'James'
