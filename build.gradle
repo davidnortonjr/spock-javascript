@@ -8,6 +8,8 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.2.2'
+    compile 'org.codehaus.groovy:groovy-all:2.3.0'
 	testCompile("org.spockframework:spock-core:0.7-groovy-2.0") { exclude group: 'org.codehaus.groovy' }
+    testRuntime "cglib:cglib-nodep:2.2.2"
+    testRuntime "org.objenesis:objenesis:1.2"
 }
