@@ -7,11 +7,11 @@ import javax.script.ScriptEngineManager
 
 class HandlebarsTemplateSpec extends Specification {
     @Shared
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn');
+    ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn')
 
     private loadJS(String path) {
         def source = this.class.getResource(path).text
-        engine.eval(source);
+        engine.eval(source)
     }
 
     void setupSpec() {

@@ -5,11 +5,11 @@ import javax.script.ScriptEngine
 import javax.script.ScriptEngineManager
 
 class ValidatorSpec extends Specification {
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn');
+    ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn')
 
     private loadJS(String path) {
         def source = this.class.getResource(path).text
-        engine.eval(source);
+        engine.eval(source)
     }
 
     @Unroll

@@ -5,11 +5,11 @@ import javax.script.ScriptEngine
 import javax.script.ScriptEngineManager
 
 class TransformSpec extends Specification {
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn');
+    ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn')
 
     def setup() {
         def source = this.class.getResource('/js/Transforms.js').text
-        engine.eval(source);
+        engine.eval(source)
     }
 
     def "transform"() {

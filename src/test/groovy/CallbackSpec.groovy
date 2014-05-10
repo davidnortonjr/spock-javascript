@@ -5,7 +5,7 @@ import javax.script.ScriptEngineManager
 import java.util.function.Function
 
 class CallbackSpec extends Specification {
-    ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn');
+    ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn')
 
     def "callback stub called"() {
         setup:
