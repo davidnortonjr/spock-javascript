@@ -20,7 +20,7 @@ class DustTemplateSpec extends Specification {
     }
 
     @Unroll
-    def "dust template"() {
+    def 'dust template'() {
         setup:
         def template = this.class.getResource('dust/greeting.dust').text
 

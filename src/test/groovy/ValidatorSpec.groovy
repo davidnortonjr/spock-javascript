@@ -13,7 +13,7 @@ class ValidatorSpec extends Specification {
     }
 
     @Unroll
-    def "#person is valid? #expectedResult"() {
+    def '#person is valid? #expectedResult'() {
         setup:
         loadJS('/js/Validators.js')
 

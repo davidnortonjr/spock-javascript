@@ -7,7 +7,7 @@ import java.util.function.Function
 class CallbackSpec extends Specification {
     ScriptEngine engine = new ScriptEngineManager().getEngineByName('nashorn')
 
-    def "callback stub called"() {
+    def 'callback stub called'() {
         setup:
         engine.eval('''function thing(callback) { return callback('some') + 'thing'; }''')
 
@@ -18,7 +18,7 @@ class CallbackSpec extends Specification {
         result == 'SOMEthing'
     }
 
-    def "callback called"() {
+    def 'callback called'() {
         setup:
         engine.eval('''function thing(callback) { return callback('some') + 'thing'; }''')
         def callback = Mock(Function)
@@ -31,7 +31,7 @@ class CallbackSpec extends Specification {
         result == 'SOMEthing'
     }
 
-    def "alert called"() {
+    def 'alert called'() {
         setup:
         engine.eval('''function doAlert() { alert('something'); }''')
         def alert = Mock(Function)

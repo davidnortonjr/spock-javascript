@@ -11,7 +11,7 @@ class TransformSpec extends Specification {
         engine.eval(source)
     }
 
-    def "transform"() {
+    def 'transform'() {
         when:
         Map result = engine.invokeFunction('transform', [name: [first: 'James', last: 'Bond']])
 
