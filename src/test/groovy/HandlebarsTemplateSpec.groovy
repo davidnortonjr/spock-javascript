@@ -20,7 +20,7 @@ class HandlebarsTemplateSpec extends Specification {
     }
 
     @Unroll
-    def "template"() {
+    def 'template'() {
         setup:
         def template = this.class.getResource('handlebars/greeting.handlebars').text
 

@@ -1,5 +1,4 @@
 import spock.lang.Specification
-import spock.lang.Unroll
 
 import javax.script.ScriptEngine
 import javax.script.ScriptEngineManager
@@ -12,7 +11,7 @@ class TransformSpec extends Specification {
         engine.eval(source)
     }
 
-    def "transform"() {
+    def 'transform'() {
         when:
         Map result = engine.invokeFunction('transform', [name: [first: 'James', last: 'Bond']])
 
